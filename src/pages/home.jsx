@@ -7,8 +7,8 @@ const Home = () => {
     const [showText, setShowText] = useState(false);
     const [productIndex, setProductIndex] = useState(0);
 
-    // Set target date to 7 days from now
-    const targetDate = new Date().getTime() + 7 * 24 * 60 * 60 * 1000;
+    // Set target date to December 31, 2024
+    const targetDate = new Date('2024-12-31T23:59:59').getTime();
     const timeLeft = useCountdown(targetDate);
 
     const slides = [
@@ -339,27 +339,37 @@ const Home = () => {
                                 />
                             </div>
                             <h3 className="text-xl mb-2 text-center">Boxy2 T-Shirt with Roll Sleeve</h3>
-                            <p className="text-xl font-semibold mb-8 text-center">$20.00</p>
+                            <p className="text-xl font-semibold mb-4 text-center">
+                                <span className="text-red-500">$15.00</span>
+                                <span className="text-gray-400 line-through ml-2">$20.00</span>
+                            </p>
+                            <p className="text-sm text-gray-600 mb-8">Limited Time Offer - Ends Soon!</p>
                             
                             {/* Countdown Timer */}
                             <div className="grid grid-cols-4 gap-4 w-full max-w-md">
-                                <div className="text-center">
-                                    <div className="text-2xl font-bold text-gray-800">{timeLeft.days}</div>
-                                    <div className="text-sm text-gray-600">days</div>
+                                <div className="text-center bg-gray-100 p-4 rounded-lg">
+                                    <div className="text-3xl font-bold text-red-500">{timeLeft.days}</div>
+                                    <div className="text-sm text-gray-600 uppercase">days</div>
                                 </div>
-                                <div className="text-center">
-                                    <div className="text-2xl font-bold text-gray-800">{timeLeft.hours}</div>
-                                    <div className="text-sm text-gray-600">hrs</div>
+                                <div className="text-center bg-gray-100 p-4 rounded-lg">
+                                    <div className="text-3xl font-bold text-red-500">{timeLeft.hours}</div>
+                                    <div className="text-sm text-gray-600 uppercase">hrs</div>
                                 </div>
-                                <div className="text-center">
-                                    <div className="text-2xl font-bold text-gray-800">{timeLeft.minutes}</div>
-                                    <div className="text-sm text-gray-600">mins</div>
+                                <div className="text-center bg-gray-100 p-4 rounded-lg">
+                                    <div className="text-3xl font-bold text-red-500">{timeLeft.minutes}</div>
+                                    <div className="text-sm text-gray-600 uppercase">mins</div>
                                 </div>
-                                <div className="text-center">
-                                    <div className="text-2xl font-bold text-gray-800">{timeLeft.seconds}</div>
-                                    <div className="text-sm text-gray-600">secs</div>
+                                <div className="text-center bg-gray-100 p-4 rounded-lg">
+                                    <div className="text-3xl font-bold text-red-500">{timeLeft.seconds}</div>
+                                    <div className="text-sm text-gray-600 uppercase">secs</div>
                                 </div>
                             </div>
+                            <button 
+                                className="mt-8 bg-red-500 text-white px-8 py-3 rounded-full hover:bg-red-600 transition-colors"
+                                onClick={() => alert('Added to cart!')}
+                            >
+                                ADD TO CART
+                            </button>
                         </div>
                     </div>
                 </div>

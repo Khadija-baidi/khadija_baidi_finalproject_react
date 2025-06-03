@@ -10,19 +10,41 @@ const useCountdown = (targetDate) => {
 
     useEffect(() => {
         const calculateTimeLeft = () => {
-            const difference = targetDate - new Date().getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
             
-            if (difference > 0) {
+            if (difference <= 0) {
+                // If target date has passed, set all values to 0
                 setTimeLeft({
-                    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                    minutes: Math.floor((difference / 1000 / 60) % 60),
-                    seconds: Math.floor((difference / 1000) % 60)
+                    days: 0,
+                    hours: 0,
+                    minutes: 0,
+                    seconds: 0
                 });
+                return false; // Return false to clear interval
             }
+
+            setTimeLeft({
+                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                minutes: Math.floor((difference / 1000 / 60) % 60),
+                seconds: Math.floor((difference / 1000) % 60)
+            });
+            
+            return true; // Continue interval
         };
 
-        const timer = setInterval(calculateTimeLeft, 1000);
+        // Calculate immediately
+        const shouldContinue = calculateTimeLeft();
+        if (!shouldContinue) return;
+
+        // Then set up interval
+        const timer = setInterval(() => {
+            const shouldContinue = calculateTimeLeft();
+            if (!shouldContinue) {
+                clearInterval(timer);
+            }
+        }, 1000);
 
         return () => clearInterval(timer);
     }, [targetDate]);
