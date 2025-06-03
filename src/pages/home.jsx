@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import useCountdown from '../hooks/useCountdown';
 
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [showText, setShowText] = useState(false);
+
+    // Set target date to 7 days from now
+    const targetDate = new Date().getTime() + 7 * 24 * 60 * 60 * 1000;
+    const timeLeft = useCountdown(targetDate);
 
     const slides = [
         {
@@ -169,6 +174,62 @@ const Home = () => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Lookbook Section */}
+            <section className="py-20">
+                <div className="container mx-auto px-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {/* Left Column - Lookbook Image */}
+                        <div className="relative group overflow-hidden">
+                            <img 
+                                src="/images/gallery-13.jpg" 
+                                alt="The Beauty Lookbook" 
+                                className="w-full h-[600px] object-cover"
+                            />
+                            <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white text-center">
+                                <h3 className="text-2xl mb-2">The Beauty</h3>
+                                <h2 className="text-5xl font-bold mb-6">LOOK BOOK</h2>
+                                <button className="px-8 py-3 border-2 border-white hover:bg-white hover:text-black transition-colors">
+                                    VIEW COLLECTION
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Right Column - Product with Timer */}
+                        <div className="bg-white p-8 flex flex-col items-center justify-center">
+                            <div className="w-full max-w-[300px] mb-8">
+                                <img 
+                                    src="/images/cards4.webp" 
+                                    alt="Boxy2 T-Shirt" 
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                            <h3 className="text-xl mb-2 text-center">Boxy2 T-Shirt with Roll Sleeve</h3>
+                            <p className="text-xl font-semibold mb-8 text-center">$20.00</p>
+                            
+                            {/* Countdown Timer */}
+                            <div className="grid grid-cols-4 gap-4 w-full max-w-md">
+                                <div className="text-center">
+                                    <div className="text-2xl font-bold text-gray-800">{timeLeft.days}</div>
+                                    <div className="text-sm text-gray-600">days</div>
+                                </div>
+                                <div className="text-center">
+                                    <div className="text-2xl font-bold text-gray-800">{timeLeft.hours}</div>
+                                    <div className="text-sm text-gray-600">hrs</div>
+                                </div>
+                                <div className="text-center">
+                                    <div className="text-2xl font-bold text-gray-800">{timeLeft.minutes}</div>
+                                    <div className="text-sm text-gray-600">mins</div>
+                                </div>
+                                <div className="text-center">
+                                    <div className="text-2xl font-bold text-gray-800">{timeLeft.seconds}</div>
+                                    <div className="text-sm text-gray-600">secs</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
