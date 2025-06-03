@@ -148,4 +148,29 @@ const Home = () => {
                 </div>
             </div>
 
-           
+            {/* Categories Section */}
+            <section className="py-20 px-4">
+                <div className="container mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {categories.map((category, index) => (
+                            <div key={index} className="group relative overflow-hidden cursor-pointer">
+                                <div className="aspect-[3/4] relative overflow-hidden">
+                                    <img 
+                                        src={category.image} 
+                                        alt={category.alt} 
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <h3 className="text-white text-2xl font-semibold tracking-wider">
+                                            {category.name}
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+          
