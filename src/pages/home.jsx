@@ -173,4 +173,79 @@ const Home = () => {
                 </div>
             </section>
 
-          
+            {/* Blog Section */}
+            <section className="py-20 bg-white">
+                <div className="container mx-auto px-4">
+                    {/* Blog Title */}
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold">
+                            OUR BLOG
+                        </h2>
+                    </div>
+
+                    {/* Blog Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {/* Blog Post 1 */}
+                        <div className="group">
+                            <div className="overflow-hidden mb-5">
+                                <img 
+                                    src="/images/gallery-03.jpg" 
+                                    alt="Black Friday Guide" 
+                                    className="w-full h-[300px] object-cover group-hover:scale-110 transition-transform duration-500"
+                                />
+                            </div>
+                            <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">
+                                Black Friday Guide: Best Sales & Discount Codes
+                            </h3>
+                            <div className="text-gray-500 text-sm mb-3">
+                                by <span className="text-gray-700">fashe-theme Admin</span> on Dec 28,2017
+                            </div>
+                            <p className="text-gray-600 leading-relaxed">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...
+                            </p>
+                        </div>
+
+                        {/* Blog Post 2 */}
+                        <div className="group">
+                            <div className="overflow-hidden mb-5">
+                                <img 
+                                    src="/images/gallery-07.jpg" 
+                                    alt="White Sneakers" 
+                                    className="w-full h-[300px] object-cover group-hover:scale-110 transition-transform duration-500"
+                                />
+                            </div>
+                            <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">
+                                The White Sneakers Nearly Every Fashion Girls Own
+                            </h3>
+                            <div className="text-gray-500 text-sm mb-3">
+                                by <span className="text-gray-700">fashe-theme Admin</span> on Dec 28,2017
+                            </div>
+                            <p className="text-gray-600 leading-relaxed">
+                                Duis ut velit gravida nibh bibendum commodo. Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et...
+                            </p>
+                        </div>
+
+                        {/* Blog Post 3 */}
+                        <div className="group">
+                            <div className="overflow-hidden mb-5">
+                                <img 
+                                    src="/images/gallery-09.jpg" 
+                                    alt="New York SS 2018" 
+                                    className="w-full h-[300px] object-cover group-hover:scale-110 transition-transform duration-500"
+                                />
+                            </div>
+                            <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">
+                                New York SS 2018 Street Style: By Annina Mislin
+                            </h3>
+                            <div className="text-gray-500 text-sm mb-3">
+                                by <span className="text-gray-700">fashe-theme Admin</span> on Dec 28,2017
+                            </div>
+                            <p className="text-gray-600 leading-relaxed">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+           
