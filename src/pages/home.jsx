@@ -4,6 +4,7 @@ import useCountdown from '../hooks/useCountdown';
 const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [showText, setShowText] = useState(false);
+    const [productIndex, setProductIndex] = useState(0);
 
     // Set target date to 7 days from now
     const targetDate = new Date().getTime() + 7 * 24 * 60 * 60 * 1000;
@@ -30,6 +31,58 @@ const Home = () => {
         }
     ];
 
+    // Featured Products Data
+    const products = [
+        {
+            id: 1,
+            name: "Boxy7 T-Shirt with Roll Sleeve",
+            price: 20.00,
+            image: "/images/item-02.jpg"
+        },
+        {
+            id: 2,
+            name: "Boxy6 T-Shirt with Roll Sleeve",
+            price: 20.00,
+            image: "/images/item-03.jpg"
+        },
+        {
+            id: 3,
+            name: "Boxy5 T-Shirt with Roll Sleeve",
+            price: 20.00,
+            image: "/images/item-05.jpg"
+        },
+        {
+            id: 4,
+            name: "Boxy4 T-Shirt with Roll Sleeve",
+            price: 20.00,
+            image: "/images/item-07.jpg"
+        },
+        {
+            id: 5,
+            name: "Classic White T-Shirt",
+            price: 20.00,
+            image: "/images/item-02.jpg"
+        },
+        {
+            id: 6,
+            name: "Summer Collection Tee",
+            price: 20.00,
+            image: "/images/item-03.jpg"
+        },
+        {
+            id: 7,
+            name: "Casual Comfort T-Shirt",
+            price: 20.00,
+            image: "/images/item-05.jpg"
+        },
+        {
+            id: 8,
+            name: "Essential Basic Tee",
+            price: 20.00,
+            image: "/images/item-07.jpg"
+        }
+    ];
+
     useEffect(() => {
         setShowText(false);
         const textTimer = setTimeout(() => setShowText(true), 500);
@@ -50,6 +103,14 @@ const Home = () => {
 
     const prevSlide = () => {
         setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    };
+
+    const nextProducts = () => {
+        setProductIndex((prev) => (prev + 4 >= products.length) ? 0 : prev + 4);
+    };
+
+    const prevProducts = () => {
+        setProductIndex((prev) => (prev - 4 < 0) ? Math.max(0, products.length - 4) : prev - 4);
     };
 
     const categories = [
@@ -174,6 +235,72 @@ const Home = () => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Featured Products Section */}
+            <section className="py-20 bg-white">
+                <div className="container mx-auto px-4">
+                    {/* Section Title */}
+                    <h2 className="text-4xl font-bold text-center mb-16">
+                        FEATURED PRODUCTS
+                    </h2>
+
+                    {/* Products Carousel */}
+                    <div className="relative">
+                        {/* Navigation Arrows */}
+                        <button
+                            onClick={prevProducts}
+                            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-lg text-gray-800 hover:bg-gray-100 text-2xl"
+                        >
+                            ‹
+                        </button>
+                        <button
+                            onClick={nextProducts}
+                            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-lg text-gray-800 hover:bg-gray-100 text-2xl"
+                        >
+                            ›
+                        </button>
+
+                        {/* Products Grid */}
+                        <div className="px-12">
+                            <div className="grid grid-cols-4 gap-8">
+                                {products.slice(productIndex, productIndex + 4).map((product) => (
+                                    <div 
+                                        key={product.id}
+                                        className="group relative w-full transition-all duration-500 ease-in-out"
+                                    >
+                                        {/* Product Image */}
+                                        <div className="relative overflow-hidden mb-4">
+                                            <img
+                                                src={product.image}
+                                                alt={product.name}
+                                                className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
+                                            />
+                                            {/* Add to Cart Overlay */}
+                                            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                                <button 
+                                                    onClick={() => alert('Added to cart: ' + product.name)}
+                                                    className="bg-white text-gray-900 px-6 py-2 rounded-full transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-gray-100"
+                                                >
+                                                    ADD TO CART
+                                                </button>
+                                            </div>
+                                        </div>
+                                        {/* Product Info */}
+                                        <div className="opacity-100 transition-opacity duration-500">
+                                            <h3 className="text-center text-gray-800 mb-2">
+                                                {product.name}
+                                            </h3>
+                                            <p className="text-center text-gray-600">
+                                                ${product.price.toFixed(2)}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
