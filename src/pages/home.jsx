@@ -248,4 +248,52 @@ const Home = () => {
                 </div>
             </section>
 
-           
+            {/* Instagram and Features Section */}
+            <section className="py-20 bg-gray-50">
+                <div className="container mx-auto px-4">
+                    {/* Instagram Title */}
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold tracking-wider">
+                            @ FOLLOW US ON INSTAGRAM
+                        </h2>
+                    </div>
+
+                    {/* Features Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {/* Free Delivery Feature */}
+                        <div className="text-center p-8 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <h3 className="text-2xl font-semibold mb-3">
+                                Free Delivery Worldwide
+                            </h3>
+                            <p className="text-gray-600 italic">
+                                Mirum est notare quam littera gothica
+                            </p>
+                        </div>
+
+                        {/* 30 Days Return Feature */}
+                        <div className="text-center p-8 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <h3 className="text-2xl font-semibold mb-3">
+                                30 Days Return
+                            </h3>
+                            <p className="text-gray-600 italic">
+                                Simply return it within 30 days for an exchange.
+                            </p>
+                        </div>
+
+                        {/* Store Opening Feature */}
+                        <div className="text-center p-8 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <h3 className="text-2xl font-semibold mb-3">
+                                Store Opening
+                            </h3>
+                            <p className="text-gray-600 italic">
+                                Shop open from Monday to Sunday
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    );
+};
+
+export default Home; 
