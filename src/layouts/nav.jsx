@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Logo from '../assets/logo.png.webp';
+import { Link, useLocation } from 'react-router-dom';
 
 const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
 
     return (
         <>
@@ -35,9 +37,9 @@ const Nav = () => {
             <nav className="bg-white border-b border-gray-200 shadow-sm">
                 <div className="px-4 md:px-8 py-4 flex justify-between items-center">
                     {/* Logo */}
-                    <a href="/" className="flex-shrink-0">
+                    <Link to="/" className="flex-shrink-0">
                         <img src={Logo} alt="Logo" className="h-8" />
-                    </a>
+                    </Link>
 
                     {/* Hamburger Button */}
                     <button
@@ -50,15 +52,52 @@ const Nav = () => {
 
                     {/* Navigation Links */}
                     <div className={`absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent md:flex items-center gap-8 px-4 md:px-0 py-4 md:py-0 transition-all duration-300 ease-in-out ${isMenuOpen ? 'block' : 'hidden'} md:flex`}>
-                        {["Home", "Shop", "Sale", "Features", "Blog", "About", "Contact"].map((link, index) => (
-                            <a
-                                key={index}
-                                href={`/${link.toLowerCase()}`}
-                                className="block md:inline text-black font-medium hover:text-red-500 transition-colors duration-300 py-2 md:py-0"
-                            >
-                                {link}
-                            </a>
-                        ))}
+                        <Link 
+                            to="/" 
+                            className={`text-gray-800 hover:text-red-500 transition-colors ${
+                                location.pathname === '/' ? 'text-red-500' : ''
+                            }`}
+                        >
+                            Home
+                        </Link>
+                        <Link 
+                            to="/shop" 
+                            className={`text-gray-800 hover:text-red-500 transition-colors ${
+                                location.pathname === '/shop' ? 'text-red-500' : ''
+                            }`}
+                        >
+                            Shop
+                        </Link>
+                        <Link 
+                            to="/sale" 
+                            className="text-gray-800 hover:text-red-500 transition-colors"
+                        >
+                            Sale
+                        </Link>
+                        <Link 
+                            to="/features" 
+                            className="text-gray-800 hover:text-red-500 transition-colors"
+                        >
+                            Features
+                        </Link>
+                        <Link 
+                            to="/blog" 
+                            className="text-gray-800 hover:text-red-500 transition-colors"
+                        >
+                            Blog
+                        </Link>
+                        <Link 
+                            to="/about" 
+                            className="text-gray-800 hover:text-red-500 transition-colors"
+                        >
+                            About
+                        </Link>
+                        <Link 
+                            to="/contact" 
+                            className="text-gray-800 hover:text-red-500 transition-colors"
+                        >
+                            Contact
+                        </Link>
                     </div>
 
                     {/* Right Icons */}

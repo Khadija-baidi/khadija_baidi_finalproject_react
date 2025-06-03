@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import useCountdown from '../hooks/useCountdown';
 
 const Home = () => {
@@ -178,9 +179,12 @@ const Home = () => {
                                 <h2 className="text-4xl md:text-7xl font-bold text-white mb-8">
                                     {slide.largeText}
                                 </h2>
-                                <button className="px-8 py-3 bg-white text-gray-900 rounded-full hover:bg-gray-100 transition-colors"id=''>
+                                <Link 
+                                    to="/shop"
+                                    className="inline-block px-8 py-3 bg-white text-gray-900 rounded-full hover:bg-gray-100 transition-colors"
+                                >
                                     {slide.buttonText}
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
