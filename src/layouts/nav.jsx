@@ -102,12 +102,12 @@ const Nav = () => {
 
                     {/* Right Icons */}
                     <div className="hidden md:flex items-center gap-6 text-black">
-                        <a href="/profile" className="hover:text-red-500 transition-colors duration-300">
+                        <Link to="/auth" className="hover:text-red-500 transition-colors duration-300">
                             <span className="material-icons">person</span>
-                        </a>
-                        <a href="/cart" className="hover:text-red-500 transition-colors duration-300">
+                        </Link>
+                        <Link to="/cart" className="hover:text-red-500 transition-colors duration-300">
                             <span className="material-icons">shopping_bag</span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </nav>

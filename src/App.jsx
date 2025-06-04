@@ -5,6 +5,7 @@ import Sale from './pages/sale.jsx';
 import Blog from './pages/blog.jsx';
 import About from './pages/about.jsx';
 import Contact from './pages/contact.jsx';
+import Auth from './pages/Auth.jsx';
 import Nav from './layouts/nav.jsx';
 import Footer from './layouts/footer.jsx';
 
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/auth" element={<Auth />} />
       </Routes>
       <Footer />
     </>
