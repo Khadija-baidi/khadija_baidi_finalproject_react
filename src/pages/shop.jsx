@@ -9,7 +9,6 @@ const Shop = () => {
         sizes: []
     });
 
-    // All products data
     const allProducts = [
         {
             id: 1,
@@ -61,10 +60,8 @@ const Shop = () => {
         }
     ];
 
-    // Filter products based on all criteria
     const [filteredProducts, setFilteredProducts] = useState(allProducts);
 
-    // Handle category filter
     const handleCategoryFilter = (category) => {
         setFilters(prev => ({
             ...prev,
@@ -72,7 +69,6 @@ const Shop = () => {
         }));
     };
 
-    // Handle checkbox filters (price, size)
     const handleCheckboxFilter = (type, value) => {
         setFilters(prev => ({
             ...prev,
@@ -82,16 +78,13 @@ const Shop = () => {
         }));
     };
 
-    // Apply filters and search
     useEffect(() => {
         let result = [...allProducts];
 
-        // Category filter
         if (filters.category) {
             result = result.filter(product => product.category === filters.category);
         }
 
-        // Price range filter
         if (filters.priceRanges.length > 0) {
             result = result.filter(product => {
                 return filters.priceRanges.some(range => {
@@ -102,19 +95,16 @@ const Shop = () => {
             });
         }
 
-        // Size filter
         if (filters.sizes.length > 0) {
             result = result.filter(product => filters.sizes.includes(product.size));
         }
 
-        // Search query
         if (searchQuery) {
             result = result.filter(product =>
                 product.name.toLowerCase().includes(searchQuery.toLowerCase())
             );
         }
 
-        // Apply sorting
         result.sort((a, b) => {
             switch (sortOrder) {
                 case 'alphabetically-az':
@@ -133,14 +123,12 @@ const Shop = () => {
         setFilteredProducts(result);
     }, [filters, searchQuery, sortOrder]);
 
-    // Get counts for categories
     const getCategoryCount = (category) => {
         return allProducts.filter(product => product.category === category).length;
     };
 
     return (
         <div className="min-h-screen bg-white">
-            {/* Shop Header */}
             <div className="relative h-[300px] bg-black">
                 <img 
                     src="/images/carousel2.jpg" 
@@ -152,12 +140,9 @@ const Shop = () => {
                 </div>
             </div>
 
-            {/* Shop Content */}
             <div className="container mx-auto px-4 py-12">
                 <div className="flex flex-col md:flex-row gap-8">
-                    {/* Filters Sidebar */}
                     <div className="w-full md:w-1/4">
-                        {/* Categories */}
                         <div className="mb-8">
                             <h2 className="text-lg font-semibold mb-4">Categories</h2>
                             <ul className="space-y-2">
@@ -176,7 +161,6 @@ const Shop = () => {
                             </ul>
                         </div>
 
-                        {/* Price Filter */}
                         <div className="mb-8">
                             <h2 className="text-lg font-semibold mb-4">Price</h2>
                             <div className="space-y-2">
@@ -197,7 +181,6 @@ const Shop = () => {
                             </div>
                         </div>
 
-                        {/* Size Filter */}
                         <div className="mb-8">
                             <h2 className="text-lg font-semibold mb-4">Size</h2>
                             <div className="space-y-2">
@@ -215,7 +198,6 @@ const Shop = () => {
                             </div>
                         </div>
 
-                        {/* Search */}
                         <div className="mb-8">
                             <div className="relative">
                                 <input
@@ -232,9 +214,7 @@ const Shop = () => {
                         </div>
                     </div>
 
-                    {/* Products Grid */}
                     <div className="w-full md:w-3/4">
-                        {/* Sort and Count */}
                         <div className="flex justify-between items-center mb-8">
                             <p className="text-gray-600">
                                 Showing {filteredProducts.length} of {allProducts.length} items
@@ -251,7 +231,6 @@ const Shop = () => {
                             </select>
                         </div>
 
-                        {/* Products Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {filteredProducts.map((product) => (
                                 <div key={product.id} className="group">

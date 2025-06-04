@@ -7,12 +7,10 @@ const Auth = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        // TODO: Implement login logic
         console.log('Login attempt with:', { email, password });
     };
 
     const handleRegister = () => {
-        // TODO: Implement registration logic
         console.log('Navigate to registration');
     };
 
@@ -20,7 +18,6 @@ const Auth = () => {
         <div className="min-h-screen bg-gray-50 py-12">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    {/* New Customer Section */}
                     <div className="bg-white p-8 rounded-lg shadow-sm">
                         <h2 className="text-3xl font-medium mb-2">New Customer</h2>
                         <h3 className="text-gray-600 mb-4">Register Account</h3>
@@ -37,7 +34,6 @@ const Auth = () => {
                         </button>
                     </div>
 
-                    {/* Returning Customer Section */}
                     <div className="bg-white p-8 rounded-lg shadow-sm">
                         <h2 className="text-3xl font-medium mb-2">Returning Customer</h2>
                         <p className="text-gray-600 mb-6">I am a returning customer</p>

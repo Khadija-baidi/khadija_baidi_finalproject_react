@@ -7,7 +7,6 @@ const Home = () => {
     const [showText, setShowText] = useState(false);
     const [productIndex, setProductIndex] = useState(0);
 
-    // Set target date to December 31, 2024
     const targetDate = new Date('2024-12-31T23:59:59').getTime();
     const timeLeft = useCountdown(targetDate);
 
@@ -32,7 +31,6 @@ const Home = () => {
         }
     ];
 
-    // Featured Products Data
     const products = [
         {
             id: 1,
@@ -149,7 +147,6 @@ const Home = () => {
 
     return (
         <main>
-            {/* Carousel Section */}
             <div className="relative h-[600px] overflow-hidden">
                 {slides.map((slide, index) => (
                     <div
@@ -158,17 +155,14 @@ const Home = () => {
                             currentSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
                         }`}
                     >
-                        {/* Image */}
                         <img 
                             src={slide.image}
                             alt={slide.smallText}
                             className="w-full h-full object-cover"
                         />
                         
-                        {/* Overlay */}
                         <div className="absolute inset-0 bg-black/30"></div>
                         
-                        {/* Text Content */}
                         <div className="absolute inset-0 flex items-center justify-center text-center">
                             <div className={`transform transition-all duration-500 ${
                                 showText && currentSlide === index ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
@@ -190,7 +184,6 @@ const Home = () => {
                     </div>
                 ))}
 
-                {/* Navigation Arrows */}
                 <button
                     onClick={prevSlide}
                     className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-white/30 text-white hover:bg-white/50 transition-colors z-20"
@@ -204,7 +197,6 @@ const Home = () => {
                     ›
                 </button>
 
-                {/* Dots */}
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
                     {slides.map((_, index) => (
                         <button
@@ -218,7 +210,6 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* Categories Section */}
             <section className="py-20 px-4">
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -243,17 +234,13 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Featured Products Section */}
             <section className="py-20 bg-white">
                 <div className="container mx-auto px-4">
-                    {/* Section Title */}
                     <h2 className="text-4xl font-bold text-center mb-16">
                         FEATURED PRODUCTS
                     </h2>
 
-                    {/* Products Carousel */}
                     <div className="relative">
-                        {/* Navigation Arrows */}
                         <button
                             onClick={prevProducts}
                             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white rounded-full shadow-lg text-gray-800 hover:bg-gray-100 text-2xl"
@@ -267,7 +254,6 @@ const Home = () => {
                             ›
                         </button>
 
-                        {/* Products Grid */}
                         <div className="px-12">
                             <div className="grid grid-cols-4 gap-8">
                                 {products.slice(productIndex, productIndex + 4).map((product) => (
@@ -275,14 +261,12 @@ const Home = () => {
                                         key={product.id}
                                         className="group relative w-full transition-all duration-500 ease-in-out"
                                     >
-                                        {/* Product Image */}
                                         <div className="relative overflow-hidden mb-4">
                                             <img
                                                 src={product.image}
                                                 alt={product.name}
                                                 className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
                                             />
-                                            {/* Add to Cart Overlay */}
                                             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
                                                 <button 
                                                     onClick={() => alert('Added to cart: ' + product.name)}
@@ -292,7 +276,6 @@ const Home = () => {
                                                 </button>
                                             </div>
                                         </div>
-                                        {/* Product Info */}
                                         <div className="opacity-100 transition-opacity duration-500">
                                             <h3 className="text-center text-gray-800 mb-2">
                                                 {product.name}
@@ -309,11 +292,9 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Lookbook Section */}
             <section className="py-20">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {/* Left Column - Lookbook Image */}
                         <div className="relative group overflow-hidden">
                             <img 
                                 src="/images/gallery-13.jpg" 
@@ -329,7 +310,6 @@ const Home = () => {
                             </div>
                         </div>
 
-                        {/* Right Column - Product with Timer */}
                         <div className="bg-white p-8 flex flex-col items-center justify-center">
                             <div className="w-full max-w-[300px] mb-8">
                                 <img 
@@ -375,19 +355,15 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Blog Section */}
             <section className="py-20 bg-white">
                 <div className="container mx-auto px-4">
-                    {/* Blog Title */}
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold">
                             OUR BLOG
                         </h2>
                     </div>
 
-                    {/* Blog Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Blog Post 1 */}
                         <div className="group">
                             <div className="overflow-hidden mb-5">
                                 <img 
@@ -407,7 +383,6 @@ const Home = () => {
                             </p>
                         </div>
 
-                        {/* Blog Post 2 */}
                         <div className="group">
                             <div className="overflow-hidden mb-5">
                                 <img 
@@ -427,7 +402,6 @@ const Home = () => {
                             </p>
                         </div>
 
-                        {/* Blog Post 3 */}
                         <div className="group">
                             <div className="overflow-hidden mb-5">
                                 <img 
@@ -450,19 +424,15 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Instagram and Features Section */}
             <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-4">
-                    {/* Instagram Title */}
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold tracking-wider">
                             @ FOLLOW US ON INSTAGRAM
                         </h2>
                     </div>
 
-                    {/* Features Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Free Delivery Feature */}
                         <div className="text-center p-8 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
                             <h3 className="text-2xl font-semibold mb-3">
                                 Free Delivery Worldwide
@@ -472,7 +442,6 @@ const Home = () => {
                             </p>
                         </div>
 
-                        {/* 30 Days Return Feature */}
                         <div className="text-center p-8 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
                             <h3 className="text-2xl font-semibold mb-3">
                                 30 Days Return
@@ -482,7 +451,6 @@ const Home = () => {
                             </p>
                         </div>
 
-                        {/* Store Opening Feature */}
                         <div className="text-center p-8 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
                             <h3 className="text-2xl font-semibold mb-3">
                                 Store Opening

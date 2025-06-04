@@ -17,16 +17,13 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Here you would typically handle the form submission
         console.log('Form submitted:', formData);
-        // Reset form
         setFormData({ name: '', email: '', message: '' });
         alert('Thank you for your message! We will get back to you soon.');
     };
 
     return (
         <div className="min-h-screen bg-white">
-            {/* Contact Header */}
             <div className="relative h-[300px] bg-black">
                 <img 
                     src="/public/images/shopy4.webp"
@@ -38,10 +35,8 @@ const Contact = () => {
                 </div>
             </div>
 
-            {/* Contact Content */}
             <div className="container mx-auto px-4 py-20">
                 <div className="flex flex-col lg:flex-row gap-16">
-                    {/* Contact Form */}
                     <div className="lg:w-1/2">
                         <h2 className="text-3xl font-semibold mb-8">Send Us A Message</h2>
                         <form onSubmit={handleSubmit} className="space-y-6">
@@ -87,7 +82,6 @@ const Contact = () => {
                         </form>
                     </div>
 
-                    {/* Contact Information */}
                     <div className="lg:w-1/2">
                         <div className="mb-12">
                             <h2 className="text-3xl font-semibold mb-8">Contact Information</h2>
@@ -124,7 +118,6 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        {/* Map */}
                         <div className="h-[300px] bg-gray-100 rounded-lg overflow-hidden">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.0607733213086!2d-74.00731674940027!3d40.74144644371558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bd6c0b9789%3A0x5dd8af15d445544f!2s379%20Hudson%20St%2C%20New%20York%2C%20NY%2010018%2C%20USA!5e0!3m2!1sen!2s!4v1644346128834!5m2!1sen!2s"

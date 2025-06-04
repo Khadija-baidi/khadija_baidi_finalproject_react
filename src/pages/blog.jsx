@@ -64,10 +64,8 @@ const Blog = () => {
                 </div>
             </div>
 
-            {/* Blog Content */}
             <div className="container mx-auto px-4 py-16">
                 <div className="flex flex-col lg:flex-row gap-12">
-                    {/* Main Content */}
                     <div className="lg:w-2/3">
                         {blogPosts.map(post => (
                             <article key={post.id} className="mb-16">
@@ -97,9 +95,7 @@ const Blog = () => {
                         ))}
                     </div>
 
-                    {/* Sidebar */}
                     <div className="lg:w-1/3">
-                        {/* Search */}
                         <div className="mb-12">
                             <div className="relative">
                                 <input
@@ -113,7 +109,6 @@ const Blog = () => {
                             </div>
                         </div>
 
-                        {/* Featured Products */}
                         <div className="mb-12">
                             <h3 className="text-lg font-semibold mb-6">Featured Products</h3>
                             <div className="space-y-4">
@@ -137,7 +132,6 @@ const Blog = () => {
                             </div>
                         </div>
 
-                        {/* Tags Cloud */}
                         <div>
                             <h3 className="text-lg font-semibold mb-6">Tags Cloud</h3>
                             <div className="flex flex-wrap gap-2">

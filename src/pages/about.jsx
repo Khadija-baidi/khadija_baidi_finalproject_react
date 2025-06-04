@@ -3,7 +3,6 @@ import React from 'react';
 const About = () => {
     return (
         <div className="min-h-screen bg-white">
-            {/* About Header */}
             <div className="relative h-[300px] bg-black">
                 <img 
                     src="/public/images/shopy4.webp" 
@@ -15,10 +14,8 @@ const About = () => {
                 </div>
             </div>
 
-            {/* About Content */}
             <div className="container mx-auto px-4 py-20">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
-                    {/* Image Section */}
                     <div className="lg:w-1/2">
                         <div className="relative">
                             <img 
@@ -29,7 +26,6 @@ const About = () => {
                         </div>
                     </div>
 
-                    {/* Content Section */}
                     <div className="lg:w-1/2">
                         <h2 className="text-3xl font-semibold mb-6">Our Story</h2>
                         <div className="space-y-6 text-gray-600">
@@ -59,7 +55,6 @@ const About = () => {
                             </p>
                         </div>
 
-                        {/* Stats Section */}
                         <div className="grid grid-cols-3 gap-8 mt-12">
                             <div className="text-center">
                                 <div className="text-4xl font-bold text-red-500 mb-2">2k+</div>
@@ -77,7 +72,6 @@ const About = () => {
                     </div>
                 </div>
 
-                {/* Values Section */}
                 <div className="mt-20">
                     <h2 className="text-3xl font-semibold text-center mb-12">Our Values</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
