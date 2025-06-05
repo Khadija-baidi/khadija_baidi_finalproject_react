@@ -93,7 +93,7 @@ const Contact = () => {
                                     <div>
                                         <h3 className="font-semibold mb-1">Address</h3>
                                         <p className="text-gray-600">
-                                            8th floor, 379 Hudson St, New York, NY 10018
+                                            4th floor, ain sebaa center,
                                         </p>
                                     </div>
                                 </div>
@@ -103,7 +103,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold mb-1">Lets Talk</h3>
-                                        <p className="text-gray-600">+1 96 716 6879</p>
+                                        <p className="text-gray-600">+212601208556</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -112,7 +112,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold mb-1">Sale Support</h3>
-                                        <p className="text-gray-600">contact@fashe.com</p>
+                                        <p className="text-gray-600">baidikhadija3@gmail.com</p>
                                     </div>
                                 </div>
                             </div>

@@ -10,8 +10,8 @@ const Footer = () => {
                     <div className="flex flex-col gap-4">
                         <h3 className="text-gray-900 text-lg font-semibold">GET IN TOUCH</h3>
                         <p className="text-sm leading-relaxed">
-                            Any questions? Let us know in store at 8th floor, 379 Hudson St,
-                            New York, NY 10018 or call us on (+1) 96 716 6879
+                            Any questions? Let us know in store at 4th floor, ain sebaa center,
+                             or call us on (+212) 601208556
                         </p>
                         <div className="flex gap-4 mt-3 text-lg">
                             <a href="#" className="hover:text-[#3b5998]"><i className="fab fa-facebook-f"></i></a>
@@ -63,7 +63,7 @@ const Footer = () => {
                 </div>
 
                 <div className="text-center border-t border-gray-300 pt-5 text-sm text-gray-600">
-                    Â© 2022 Shopify Theme Developed by MassTechnologist. All rights reserved.
+                    Â© 2025 Shopify Theme Developed by MassTechnologist. All rights reserved.
                 </div>
             </div>
         </footer>
